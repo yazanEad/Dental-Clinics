@@ -1,0 +1,109 @@
+
+.profile-container {
+padding-top: 60px;
+padding-bottom: 60px;
+}
+
+.left-sidebar {
+    padding: 15px;
+  border: 1px solid #EAEAEA;
+  border-radius: var(--border-radius-xl);
+  background-color: var(--color-white);
+}
+
+.profile-img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-name {
+  color: var(--color-black);
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.doctor-role {
+  font-size: var(--fs-p-sm);
+  margin-bottom: 24px;
+}
+
+.info-title {
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: var(--fs-p-sm);
+  color: var(--color-charcoal-gray);
+}
+
+.contact-item svg {
+  color: var(--color-blue);
+  font-size: var(--fs-p-lg);
+}
+
+.contact-item p{
+    margin-bottom: 0;
+}
+
+.btn-book {
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-book:hover {
+   background-color: #1e5eea;
+  
+}
+
+/*............. */
+.content-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+
+.highlights-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.highlights-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: var(--fs-p-base);
+  color: var(--color-charcoal-gray);
+}
+
+.highlights-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-ash-gray);
+  border-radius: 50%;
+}
+
+.availability-box svg {
+    font-size: var(--fs-p-lg);
+  color: var(--color-blue);
+}

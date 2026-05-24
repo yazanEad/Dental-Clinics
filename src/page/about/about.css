@@ -1,0 +1,151 @@
+.image-layout{
+    padding: 60px 0;
+    min-height: 600px;
+}
+.imge{
+height: 100%;
+overflow: hidden;
+border-radius: var(--border-radius-xl);
+}
+.imge img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.imge img:hover{
+    transform: scale(1.1);
+}
+.imge2 , .imge3{
+    height: 50%;
+}
+@media (max-width: 767px) {
+  .imge {
+    height: 175px; 
+    margin-bottom: 10px;
+  }
+}
+
+/* >>>>>>. sryle videoAbout-icon */
+
+.videoAbout-icon{
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.videoAbout-icon svg{
+  font-size: 20px;
+  color: var(--color-white);
+}
+.watch-video{
+    font-size: var(--);
+}
+
+/* >>>>>>. sryle about-goals */
+
+.about-goals{
+    background-color: var(--color-low-blue);
+    padding: 60px 0;
+}
+.about-goals__image{
+    height: 500px;
+    overflow: hidden;
+    border-radius: var(--border-radius-xl);
+}
+.about-goals__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-goals__subtitle{
+    font-size: var(--fs-p-sm);
+}
+.about-goals__mission{
+    background-color: var(--color-white);
+    padding: 28px 24px;
+    border-radius: var(--border-radius-lg);
+}
+
+/* >>>>>>. sryle about-goals */
+.why-us{
+    
+    padding: 60px 0;
+}
+.why-us__image{
+    height: 500px;
+    overflow: hidden;
+    border-radius: var(--border-radius-xl);
+}
+.why-us__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-us__subtitle{
+    font-size: var(--fs-p-sm);
+}
+
+.we-provide__icon{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.we-provide__icon svg{
+color: var(--color-white);
+font-size: var(--fs-h6);
+}
+.we-provide__title{
+font-size: var(--fs-p-lg);
+color: var(--color-black);
+}
+.we-provide__text{
+font-size: var(--fs-p-sm);
+
+}
+
+
+/* >>>>>>. sryle video */
+.video-about {
+  width: 100%;
+    height: auto;
+  position: relative;
+}
+
+.video-about video {
+  width: 100%;
+  height: 100%;
+
+}
+
+.video-icon{
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+.video-icon svg{
+  font-size: 30px;
+  color: var(--color-white);
+}
