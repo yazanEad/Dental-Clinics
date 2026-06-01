@@ -1,6 +1,6 @@
 import heroImige from '../../assets/heroImage.jpg'
 import { FiPhone } from "react-icons/fi";
-
+import { motion } from "motion/react";
 
 function HeroSection() {
   return (
@@ -45,9 +45,9 @@ function HeroSection() {
           </div>
 
           {/* Right */}
-          <div className="col hero-img">
+          <motion.div className="col hero-img">
             <img src={heroImige} alt="" className="img-fluid " />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

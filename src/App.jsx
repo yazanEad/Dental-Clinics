@@ -13,6 +13,7 @@ import ServiceDetails from './page/serviceDetails/ServiceDetails';
 import BlogDetails from './page/blogDetails/BlogDetails';
 import DoctorProfile from './page/doctorProfile/DoctorProfile';
 import { useEffect } from 'react';
+import Test from './components/Test';
 
 function App() {
   let location = useLocation()
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <Navbar />
-
+      <Test/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
