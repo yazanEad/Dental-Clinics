@@ -15,6 +15,8 @@ import VideoTwo from "../../assets/VideoTwo.mp4";
 import HeaddingWrapper from "../../components/HeaddingWrapper";
 import TeamList from "../../components/TeamList";
 import TalkToUs from "../../components/TalkToUs";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 
 
 
@@ -22,7 +24,14 @@ function About() {
   return (
     <div>
       <div className="container-fluid container-lg ">
-        <div className="text-center mt-5 ">
+        <motion.div
+          className="text-center mt-5 "
+          variants={cardAppear}
+          initial="hidden"
+          whileInView="visible"
+          viewport={cardViewport}
+          custom={0}
+        >
           <p className="fw-medium">About us</p>
           <h1 className=" my-4 col-12 col-lg-7 mx-auto">
             A modern dental care home for families
@@ -34,44 +43,79 @@ function About() {
           <Link to="/contact">
             <button className="butt">Contact us</button>
           </Link>
-        </div>
+        </motion.div>
       </div>
       {/* >>>>>>>>>>>> */}
       <div>
         <div className="container-fluid container-lg">
           <div className="image-layout row ">
-            <div className="col-12 col-md-4">
+            <motion.div
+              className="col-12 col-md-4"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={0}
+            >
               <div className="imge imge1 ">
                 <img src={Img01} alt="" />
               </div>
-            </div>
-            <div className=" col-12 col-md-4  d-flex flex-column  gap-1 gap-md-3">
+            </motion.div>
+            <motion.div
+              className=" col-12 col-md-4  d-flex flex-column  gap-1 gap-md-3"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={1}
+            >
               <div className="imge imge2 ">
                 <img src={Img02} alt="" />
               </div>
               <div className="imge imge3 ">
                 <img src={Img03} alt="" />
               </div>
-            </div>
-            <div className="col-12 col-md-4">
+            </motion.div>
+            <motion.div
+              className="col-12 col-md-4"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={2}
+            >
               <div className="imge img4 ">
                 <img src={Img04} alt="" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
       {/* >>>>>>>>>>>> */}
       <div className="container-fluid container-lg">
         <div className="d-flex  align-items-center flex-column-reverse flex-md-row gap-5">
-          <div className="col">
+          <motion.div
+            className="col"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={0}
+          >
             <div className=" statistic row  row-cols-2 g-3">
-              {stats.map((s) => {
-                return <Stat key={s.id} item={s} />;
+              {stats.map((s, index) => {
+                return <Stat key={s.id} item={s} index={index} />;
               })}
             </div>
-          </div>
-          <div className="col">
+          </motion.div>
+          <motion.div
+            className="col"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={1}
+          >
             <h2>Caring for your family’s oral health needs</h2>
             <p className="my-4">
               We are committed to delivering exceptional dental care with
@@ -84,20 +128,34 @@ function About() {
               </Link>
               <p className="mb-0 text-dark watch-video">Watch video</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* >>>>>>>>>>>> */}
       <div className="about-goals">
         <div className="container-fluid container-lg">
           <div className="row row-cols-1 row-cols-md-2 align-items-center g-5">
-            <div className="col">
+            <motion.div
+              className="col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={0}
+            >
               <div className="about-goals__image ">
                 <img src={aboutGoals} alt="About goals" />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="about-goals__content col">
+            <motion.div
+              className="about-goals__content col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={1}
+            >
               <p className="about-goals__subtitle">About goals</p>
 
               <h2 className="about-goals__title">
@@ -113,7 +171,7 @@ function About() {
                   through personalized treatments.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -121,13 +179,27 @@ function About() {
       <div className="why-us">
         <div className="container-fluid container-lg">
           <div className="row row-cols-1 row-cols-md-2 flex-row-reverse align-items-center g-5">
-            <div className="col">
+            <motion.div
+              className="col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={0}
+            >
               <div className="why-us__image ">
                 <img src={why_us} alt="About goals" />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="why-us__content col">
+            <motion.div
+              className="why-us__content col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={1}
+            >
               <p className="why-us__subtitle">Why us!!</p>
 
               <h2 className="why-us__title">
@@ -135,7 +207,14 @@ function About() {
               </h2>
 
               <div className=" my-5">
-                <div className="we-provide row align-items-center  g-4 ">
+                <motion.div
+                  className="we-provide row align-items-center  g-4 "
+                  variants={cardAppear}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={cardViewport}
+                  custom={2}
+                >
                   <div className=" col-3 col-lg-2">
                     <div className="we-provide__icon ">
                       <FaPlus />
@@ -147,9 +226,16 @@ function About() {
                       Focused on your comfort and satisfaction at every visit.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="we-provide row align-items-center  g-5">
+                <motion.div
+                  className="we-provide row align-items-center  g-5"
+                  variants={cardAppear}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={cardViewport}
+                  custom={3}
+                >
                   <div className="col-3 col-lg-2">
                     <div className="we-provide__icon ">
                       <FaRegUserCircle />
@@ -163,19 +249,26 @@ function About() {
                       tools.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
       {/* >>>>>>>>>>>> */}
-      <div className="video-about">
+      <motion.div
+        className="video-about"
+        variants={cardAppear}
+        initial="hidden"
+        whileInView="visible"
+        viewport={cardViewport}
+        custom={0}
+      >
         <video src={VideoTwo} autoPlay loop muted playsInline />
         <Link to="https://www.youtube.com/" className="video-icon">
           <AiFillCaretRight />
         </Link>
-      </div>
+      </motion.div>
       {/* >>>>>>>>>>>> */}
       <section>
         <HeaddingWrapper

@@ -1,12 +1,21 @@
 import { FaStar } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
 
 
 
-function ServicesCard({ service }) {
+function ServicesCard({ service, index = 0 }) {
   return (
-      <div className="service-card  col-12 col-md-6 col-lg-4">
+      <motion.div
+        className="service-card  col-12 col-md-6 col-lg-4"
+        variants={cardAppear}
+        initial="hidden"
+        whileInView="visible"
+        viewport={cardViewport}
+        custom={index}
+      >
         <Link to={`/services/${service.Slug}`}>
         <div className="service-img">
           <img src={service.CoverImage} alt="" />
@@ -22,7 +31,7 @@ function ServicesCard({ service }) {
         </div>
         <p className="service-desc">{service.ShortDescription}</p>
         </Link>
-      </div>
+      </motion.div>
     
   );
 }

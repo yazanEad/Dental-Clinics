@@ -1,8 +1,18 @@
 
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
+
 function Newsletter() {
   return (
     <div className="container-fluid container-lg">
-      <div className="newsletter d-flex flex-column flex-md-row  justify-content-between align-items-center gap-4 ">
+      <motion.div
+        className="newsletter d-flex flex-column flex-md-row  justify-content-between align-items-center gap-4 "
+        variants={cardAppear}
+        initial="hidden"
+        whileInView="visible"
+        viewport={cardViewport}
+        custom={0}
+      >
         <h4>
           Subscribe for exclusive <br /> content & news
         </h4>
@@ -17,7 +27,7 @@ function Newsletter() {
           </div>
           <p className="mt-4 text-black">Enter your company email…</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

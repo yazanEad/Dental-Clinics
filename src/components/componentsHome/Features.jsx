@@ -6,6 +6,8 @@ import {
   LuLayers,
 } from "react-icons/lu";
 import { BsClipboardHeart } from "react-icons/bs";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 
 const dentalServices = [
   {
@@ -57,15 +59,20 @@ function Features() {
         <div className="container-fluid container-lg">
           <div className="row g-5">
             
-            {dentalServices.map((service) => (
-              <div
+            {dentalServices.map((service, index) => (
+              <motion.div
                 className="feature-card col-12 col-md-6 col-lg-4 "
                 key={service.id}
+                variants={cardAppear}
+                initial="hidden"
+                whileInView="visible"
+                viewport={cardViewport}
+                custom={index}
               >
                 <div className="icon-wrapper">{service.icon}</div>
                 <h6>{service.title}</h6>
                 <p>{service.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

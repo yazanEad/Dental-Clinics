@@ -1,6 +1,8 @@
 import { useState } from "react";
 import HeaddingWrapper from "./HeaddingWrapper";
 import { FiPlus } from "react-icons/fi";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
 
 const faqs = [
   {
@@ -42,10 +44,15 @@ function FAQ() {
       <div className="questionAnswer container-fluid container-lg">
         <div className="col-10 col-lg-8 mx-auto ">
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
               className="border-bottom py-3"
               style={{ cursor: "pointer" }}
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
               <div className="d-flex justify-content-between align-items-center">
@@ -63,7 +70,7 @@ function FAQ() {
               >
                 {faq.answer}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

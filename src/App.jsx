@@ -12,18 +12,16 @@ import Footer from './components/Footer';
 import ServiceDetails from './page/serviceDetails/ServiceDetails';
 import BlogDetails from './page/blogDetails/BlogDetails';
 import DoctorProfile from './page/doctorProfile/DoctorProfile';
-import { useEffect } from 'react';
-import Test from './components/Test';
+import { useLayoutEffect } from 'react';
 
 function App() {
   let location = useLocation()
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
   return (
     <>
       <Navbar />
-      <Test/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>

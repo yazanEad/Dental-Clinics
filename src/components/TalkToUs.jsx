@@ -1,4 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
 
 function TalkToUs() {
   return (
@@ -7,14 +9,28 @@ function TalkToUs() {
         <div className="container">
           <div className="row row-cols-1 row-cols-lg-2 g-3 align-items-center">
             {/* <!-- Left Side --> */}
-            <div className="col">
+            <motion.div
+              className="col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={0}
+            >
               <div className="talkToUs-info mb-5 mb-lg-0">
                 <h2 className="talkToUs-title">
                   Talk to us about your <br />
                   dental concerns
                 </h2>
 
-                <div className="location-box d-flex align-items-start gap-3">
+                <motion.div
+                  className="location-box d-flex align-items-start gap-3"
+                  variants={cardAppear}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={cardViewport}
+                  custom={1}
+                >
                   <div className="icon-box">
                     <IoLocationOutline />
                   </div>
@@ -22,9 +38,16 @@ function TalkToUs() {
                     <h6>New York, NY</h6>
                     <p>123 Smile Street, Suite 101, New York, NY 10001</p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="location-box  d-flex align-items-start gap-3 mt-4">
+                <motion.div
+                  className="location-box  d-flex align-items-start gap-3 mt-4"
+                  variants={cardAppear}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={cardViewport}
+                  custom={2}
+                >
                   <div className="icon-box">
                     <IoLocationOutline />
                   </div>
@@ -32,12 +55,19 @@ function TalkToUs() {
                     <h6>Los Angeles, CA</h6>
                     <p>456 Bright Avenue, Building B, Los Angeles, CA 90012</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* <!-- Right Side --> */}
-            <div className="col">
+            <motion.div
+              className="col"
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={1}
+            >
               <div className="talkToUs-form">
                 <form className="row g-3">
                   <div className="col-md-6">
@@ -86,7 +116,7 @@ function TalkToUs() {
                   </div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

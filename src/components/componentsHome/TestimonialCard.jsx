@@ -1,4 +1,6 @@
 import ReactCompareImage from 'react-compare-image';
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 
 
 
@@ -8,8 +10,16 @@ function TestimonialCard({testimonial}) {
 
   return (
     <>
-      {testimonial.map((item) => (
-        <div key={item.id} className="col-12 col-md-6 col-lg-4">
+      {testimonial.map((item, index) => (
+        <motion.div
+          key={item.id}
+          className="col-12 col-md-6 col-lg-4"
+          variants={cardAppear}
+          initial="hidden"
+          whileInView="visible"
+          viewport={cardViewport}
+          custom={index}
+        >
           <div className="testimonial-card card ">
             <div className="image-wrapper position-relative">
               <ReactCompareImage
@@ -28,7 +38,7 @@ function TestimonialCard({testimonial}) {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </>
   );

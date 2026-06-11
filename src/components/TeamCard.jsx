@@ -1,9 +1,18 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
 
-function TeamCard({ doctor}) {
+function TeamCard({ doctor, index = 0}) {
   return (
-    <div className="col">
+    <motion.div
+      className="col"
+      variants={cardAppear}
+      initial="hidden"
+      whileInView="visible"
+      viewport={cardViewport}
+      custom={index}
+    >
       <Link to={`/team/${doctor.slug}`}>
         <div className="doctor-card">
           <div className="doctor-image">
@@ -18,7 +27,7 @@ function TeamCard({ doctor}) {
           <p className="doctor-role"> {doctor.role}</p>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
 

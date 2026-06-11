@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/dentify_logo.svg"
 import { useState } from "react";
+import { motion } from "motion/react";
+import { cardAppear } from "../utils/motionPresets";
 
 
 
@@ -8,7 +10,13 @@ export default function Navbar() {
      const [open, setOpen] = useState(false);
 
   return (
-    <nav className="navbar navbar-expand-lg  py-3 bg-white sticky-top ">
+    <motion.nav
+      className="navbar navbar-expand-lg  py-3 bg-white sticky-top "
+      variants={cardAppear}
+      initial="hidden"
+      animate="visible"
+      custom={0}
+    >
       <div className="container-fluid container-lg">
         <Link to="/" className="navbar-brand logo">
           <div className="logoImge">
@@ -56,6 +64,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

@@ -2,10 +2,19 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { GoClock } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../utils/motionPresets";
 
-function BlogCard({ blog }) {
+function BlogCard({ blog, index = 0 }) {
   return (
-    <div className="col">
+    <motion.div
+      className="col"
+      variants={cardAppear}
+      initial="hidden"
+      whileInView="visible"
+      viewport={cardViewport}
+      custom={index}
+    >
       <Link to={`/blogs/${blog.slug}`}>
         <div className="blog-card">
           <div className="blog-image">
@@ -30,7 +39,7 @@ function BlogCard({ blog }) {
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
 

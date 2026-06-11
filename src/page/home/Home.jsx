@@ -19,6 +19,8 @@ import FAQ from "../../components/FAQ";
 import TalkToUs from "../../components/TalkToUs";
 import TestimonialList from "../../components/componentsHome/TestimonialList";
 import Statistics from "../../components/Statistics";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 
 function Home() {
   return (
@@ -32,7 +34,14 @@ function Home() {
         />
         <IntroductionCards />
         <div className="container-fluid container-lg">
-          <div className="video-wrapper">
+          <motion.div
+            className="video-wrapper"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={0}
+          >
             <video
               className="video-element"
               src={videoOne}
@@ -44,7 +53,7 @@ function Home() {
             <Link to="https://www.youtube.com/" className="video-icon">
               <AiFillCaretRight />
             </Link>
-          </div>
+          </motion.div>
         </div>
         <Statistics stats={stats.slice(0, 4)} />
       </section>

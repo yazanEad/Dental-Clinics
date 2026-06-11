@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import step01 from "../../assets/step01.png"
 import step02 from "../../assets/step02.webp";
 import step03 from "../../assets/step03.jpg";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 const OurWork = [
   {
     id: "01",
@@ -30,11 +32,16 @@ function HowItWorks() {
   return (
     <div className="container-fluid container-lg">
       <div className="howItWorks">
-        {OurWork.map((work) => {
+        {OurWork.map((work, index) => {
           return (
-            <div
+            <motion.div
               key={work.id}
               className="work-container row row-cols-1 row-cols-md-2  align-items-center  g-5 "
+              variants={cardAppear}
+              initial="hidden"
+              whileInView="visible"
+              viewport={cardViewport}
+              custom={index}
             >
               {/* Left */}
               <div className="col work-image">
@@ -50,7 +57,7 @@ function HowItWorks() {
                   <button className="butt">Contact us</button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

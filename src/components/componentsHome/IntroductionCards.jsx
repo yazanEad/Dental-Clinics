@@ -2,6 +2,8 @@
 
 import { BsBoxFill, BsHeartFill } from "react-icons/bs";
 import { FaMagic } from "react-icons/fa";
+import { motion } from "motion/react";
+import { cardAppear, cardViewport } from "../../utils/motionPresets";
 
  function IntroductionCards() {
   return (
@@ -9,7 +11,14 @@ import { FaMagic } from "react-icons/fa";
       <div className="container-fluid container-lg">
         <div className="introduction row g-3">
           {/* Card 1 */}
-          <div className="col-12 col-md-4">
+          <motion.div
+            className="col-12 col-md-4"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={0}
+          >
             <div className="introduction-card">
               <div className="introduction-icon">
                 <FaMagic />
@@ -20,10 +29,17 @@ import { FaMagic } from "react-icons/fa";
                 your specific needs. From preventive carefully.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 */}
-          <div className="col-12 col-md-4">
+          <motion.div
+            className="col-12 col-md-4"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={1}
+          >
             <div className="introduction-card ">
               <div className="introduction-icon">
                 <BsBoxFill />
@@ -34,10 +50,17 @@ import { FaMagic } from "react-icons/fa";
                 efficient, and effective treatments.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3 */}
-          <div className="col-12 col-md-4">
+          <motion.div
+            className="col-12 col-md-4"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={2}
+          >
             <div className="introduction-card ">
               <div className="introduction-icon">
                 <BsHeartFill />
@@ -48,7 +71,7 @@ import { FaMagic } from "react-icons/fa";
                 you feel supported at every step.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
