@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { cardAppear, cardViewport } from "../utils/motionPresets";
 
-function TeamCard({ doctor, index = 0}) {
+function TeamCard({ doctor, index = 0, animateOnLoad = false}) {
+  const animationProps = animateOnLoad
+    ? { initial: "hidden", animate: "visible" }
+    : { initial: "hidden", whileInView: "visible", viewport: cardViewport };
+
   return (
     <motion.div
       className="col"
       variants={cardAppear}
-      initial="hidden"
-      whileInView="visible"
-      viewport={cardViewport}
+      {...animationProps}
       custom={index}
     >
       <Link to={`/team/${doctor.slug}`}>

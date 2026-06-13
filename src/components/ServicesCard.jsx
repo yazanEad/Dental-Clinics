@@ -6,14 +6,16 @@ import { cardAppear, cardViewport } from "../utils/motionPresets";
 
 
 
-function ServicesCard({ service, index = 0 }) {
+function ServicesCard({ service, index = 0, animateOnLoad = false }) {
+  const animationProps = animateOnLoad
+    ? { initial: "hidden", animate: "visible" }
+    : { initial: "hidden", whileInView: "visible", viewport: cardViewport };
+
   return (
       <motion.div
         className="service-card  col-12 col-md-6 col-lg-4"
         variants={cardAppear}
-        initial="hidden"
-        whileInView="visible"
-        viewport={cardViewport}
+        {...animationProps}
         custom={index}
       >
         <Link to={`/services/${service.Slug}`}>

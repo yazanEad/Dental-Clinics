@@ -26,8 +26,7 @@ export default function DoctorProfile() {
             className="col-lg-4 col-md-5"
             variants={cardAppear}
             initial="hidden"
-            whileInView="visible"
-            viewport={cardViewport}
+            animate="visible"
             custom={0}
           >
             <div className="left-sidebar shadow-sm">
@@ -66,8 +65,7 @@ export default function DoctorProfile() {
               className="content-section"
               variants={cardAppear}
               initial="hidden"
-              whileInView="visible"
-              viewport={cardViewport}
+              animate="visible"
               custom={0}
             >
               <h4 className="section-title">Introduction:</h4>

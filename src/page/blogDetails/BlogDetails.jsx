@@ -16,8 +16,7 @@ function BlogDetails() {
           className=" text-center py-5"
           variants={cardAppear}
           initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
+          animate="visible"
           custom={0}
         >
           <div className="d-flex align-items-center justify-content-center gap-3">
@@ -40,8 +39,7 @@ function BlogDetails() {
           className="blogDetails_image"
           variants={cardAppear}
           initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
+          animate="visible"
           custom={0}
         >
           <img src={blog.coverImage} alt="" />

@@ -24,26 +24,50 @@ function About() {
   return (
     <div>
       <div className="container-fluid container-lg ">
-        <motion.div
-          className="text-center mt-5 "
-          variants={cardAppear}
-          initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
-          custom={0}
-        >
-          <p className="fw-medium">About us</p>
-          <h1 className=" my-4 col-12 col-lg-7 mx-auto">
+        <div className="text-center mt-5 ">
+          <motion.p
+            className="fw-medium"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={0}
+          >
+            About us
+          </motion.p>
+          <motion.h1
+            className=" my-4 col-12 col-lg-7 mx-auto"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={1}
+          >
             A modern dental care home for families
-          </h1>
-          <p className=" col-12 col-lg-6 mx-auto">
+          </motion.h1>
+          <motion.p
+            className=" col-12 col-lg-6 mx-auto"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={2}
+          >
             Dedicated to providing exceptional dental care that combines
             advanced techniques
-          </p>
-          <Link to="/contact">
-            <button className="butt">Contact us</button>
-          </Link>
-        </motion.div>
+          </motion.p>
+          <motion.div
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={3}
+          >
+            <Link to="/contact">
+              <button className="butt">Contact us</button>
+            </Link>
+          </motion.div>
+        </div>
       </div>
       {/* >>>>>>>>>>>> */}
       <div>
@@ -53,8 +77,7 @@ function About() {
               className="col-12 col-md-4"
               variants={cardAppear}
               initial="hidden"
-              whileInView="visible"
-              viewport={cardViewport}
+              animate="visible"
               custom={0}
             >
               <div className="imge imge1 ">
@@ -65,8 +88,7 @@ function About() {
               className=" col-12 col-md-4  d-flex flex-column  gap-1 gap-md-3"
               variants={cardAppear}
               initial="hidden"
-              whileInView="visible"
-              viewport={cardViewport}
+              animate="visible"
               custom={1}
             >
               <div className="imge imge2 ">
@@ -80,8 +102,7 @@ function About() {
               className="col-12 col-md-4"
               variants={cardAppear}
               initial="hidden"
-              whileInView="visible"
-              viewport={cardViewport}
+              animate="visible"
               custom={2}
             >
               <div className="imge img4 ">

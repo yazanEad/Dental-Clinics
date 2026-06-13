@@ -21,8 +21,7 @@ function ServiceDetails() {
           className=" text-center py-5"
           variants={cardAppear}
           initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
+          animate="visible"
           custom={0}
         >
           <div className="icon-imge bg">
@@ -36,8 +35,7 @@ function ServiceDetails() {
           className="serviceDetails_image"
           variants={cardAppear}
           initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
+          animate="visible"
           custom={0}
         >
           <img src={service.CoverImage} alt="" />

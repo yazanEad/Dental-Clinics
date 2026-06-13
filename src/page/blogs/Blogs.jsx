@@ -9,24 +9,41 @@ function Blogs() {
   return (
     <div>
       <div className="container-fluid container-lg ">
-        <motion.div
-          className="text-center mt-5 "
-          variants={cardAppear}
-          initial="hidden"
-          whileInView="visible"
-          viewport={cardViewport}
-          custom={0}
-        >
-          <p className="fw-medium">Blogs</p>
-          <h1 className=" my-4 col-12 col-lg-9 mx-auto">
+        <div className="text-center mt-5 ">
+          <motion.p
+            className="fw-medium"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={0}
+          >
+            Blogs
+          </motion.p>
+          <motion.h1
+            className=" my-4 col-12 col-lg-9 mx-auto"
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={1}
+          >
             Stay updated with dental wellness tips
-          </h1>
-          <Link to="/contact">
-            <button className="butt">Contact us</button>
-          </Link>
-        </motion.div>
+          </motion.h1>
+          <motion.div
+            variants={cardAppear}
+            initial="hidden"
+            whileInView="visible"
+            viewport={cardViewport}
+            custom={2}
+          >
+            <Link to="/contact">
+              <button className="butt">Contact us</button>
+            </Link>
+          </motion.div>
+        </div>
       </div>
-      <BlogList blogs={blogPosts} />
+      <BlogList blogs={blogPosts} animateOnLoad />
       <TalkToUs />
     </div>
   );
